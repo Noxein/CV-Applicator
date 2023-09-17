@@ -68,88 +68,118 @@ function downloadPdfDocument(rootElementId){
         <div className="container">
 
             <div className="inputs">
+
                 <div className="uploadpic">
-                    <input type="file" accept="image/jpeg, image/png, image/jpg" onChange={(e)=>ImageFunctions.setimage(e)}/>
+                    <input type="file" accept="image/jpeg, image/png, image/jpg" id="uploadImgBtn" onChange={(e)=>ImageFunctions.setimage(e)}/>
+                    <label htmlFor="uploadImgBtn" className="uploadImgBtn">Upload Picture</label>
                     <button onClick={()=>downloadPdfDocument('outputs')}>Download as PDF</button>
                 </div>
+
+
                 <div>
-                    <MakeInputLinked placeholder="Name" name={name} setName={setName}/> <br />
-                    <MakeInputLinked placeholder="Surename" name={sureName} setName={setsureName}/>
-                    <MakeInputLinked placeholder="Title" name={title} setName={setTitle}/>
+                    <div className="InputBorder">
+                            <p> BASIC INFO</p>
+                    </div>
+                    <div className="InputBorder">
+                        <MakeInputLinked placeholder="Name" name={name} setName={setName}/> <br />
+                        <MakeInputLinked placeholder="Surename" name={sureName} setName={setsureName}/>
+                        <MakeInputLinked placeholder="Title" name={title} setName={setTitle}/>
+                    </div>
                 </div>
 
                 <div>
-                    <p>SKILLS</p>
-                        <SkillInputs 
-                        array={skills}
-                        arrayHandler={setTheArray}
-                        addBtn={()=>Functions.AddSkill(setTheArray,skills,{text:"Skill",level:5,id:uuidv4()})}
-                        delFun={Functions.deleteSkill}
-                        changeFun={Functions.editSkill}
-                        changeSlider={Functions.editSkill}
-                        />
-
+                    <div className="InputBorder">
+                            <p>SKILLS</p>
+                    </div>
+                    <div className="InputBorder">
+                            <SkillInputs
+                            array={skills}
+                            arrayHandler={setTheArray}
+                            addBtn={()=>Functions.AddSkill(setTheArray,skills,{text:"Skill",level:5,id:uuidv4()})}
+                            delFun={Functions.deleteSkill}
+                            changeFun={Functions.editSkill}
+                            changeSlider={Functions.editSkill}
+                            />
+                    </div>
                 </div>
 
                 <div>
-                    <p>LANGUAGES</p>
-
-                        <Languages 
-                        array={Language}
-                        arrayHandler={setLanguage}
-                        handleAddLanguage={()=>Functions.AddSkill(setLanguage,Language,{language:"Language",level:"A1",id:uuidv4()})}
-                        handleDeleteLanguage={Functions.deleteSkill}
-                        handleLanguage={Functions.editSkill} 
-                        handleLanguageLevel={Functions.editSkill}
-                        />
+                    <div className="InputBorder">
+                            <p>LANGUAGES</p>
+                    </div>
+                    <div className="InputBorder">
+                            <Languages
+                            array={Language}
+                            arrayHandler={setLanguage}
+                            handleAddLanguage={()=>Functions.AddSkill(setLanguage,Language,{language:"Language",level:"A1",id:uuidv4()})}
+                            handleDeleteLanguage={Functions.deleteSkill}
+                            handleLanguage={Functions.editSkill}
+                            handleLanguageLevel={Functions.editSkill}
+                            />
+                    </div>
                 </div>
 
                 <div>
-                    <p>CONTACT</p>
-                        <ContactInput city={city} phone={phone} email={email}
-
-                        handleCity={handleCity} handlePhone={handlePhone} handleEmail={handleEmail}/>
+                    <div className="InputBorder">
+                        <p>CONTACT</p>
+                    </div>
+                    <div className="InputBorder">
+                            <ContactInput city={city} phone={phone} email={email}
+                            handleCity={handleCity} handlePhone={handlePhone} handleEmail={handleEmail}/>
+                    </div>
                 </div>
 
                 <div>
-                    <p>ABOUT</p>
-                        <About
-                        array={about}
-                        arrayHandler={setAbout}
-                        addAbout={()=>Functions.AddSkill(setAbout,about,{text:"About You",id:uuidv4()})}
-                        delAbout={Functions.deleteSkill}
-                        changeAbout={Functions.editSkill}
-                        />
-                </div>
-
-                <div className="expirienceoneOutput">
-                    <p>EXPIRIENCE</p>
-                        <Expirience 
-                        array={expirience}
-                        arrayHandler={handleExpirience}
-                        AddExpirience={()=>Functions.AddSkill(handleExpirience,expirience,{startdate:"2023-09-01",enddate:"2023-07-01",where:"Place",resposibilities:['responsiblity1','responsiblity2'],id:uuidv4()})} 
-                        AddResponsibilty={ResponsibilityFunctions.AddResponsibilty}
-                        deleteExpirience={Functions.deleteSkill}
-                        DeleteResponsibilty={ResponsibilityFunctions.DeleteResponsibilty}
-                        editExpirienceWhere={Functions.editSkill} 
-                        editExpirienceStart={Functions.editSkill} 
-                        editExpirienceEnd={Functions.editSkill}
-                        editResponsiblity={ResponsibilityFunctions.editResponsiblity} 
-                        editExpirienceJobPostion={Functions.editSkill}/>
+                    <div className="InputBorder">
+                        <p>ABOUT</p>
+                    </div>
+                    <div className="InputBorder">
+                            <About
+                            array={about}
+                            arrayHandler={setAbout}
+                            addAbout={()=>Functions.AddSkill(setAbout,about,{text:"About You",id:uuidv4()})}
+                            delAbout={Functions.deleteSkill}
+                            changeAbout={Functions.editSkill}
+                            />
+                    </div>
                 </div>
 
                 <div>
-                    <p>EDUCATION</p>
-                        <Education
-                        array={education}
-                        arrayHandler={handleEducation}
-                        AddEducation={()=>Functions.AddSkill(handleEducation,education,{startdate:"2015-09-01",enddate:"2020-07-01",direction:"IT",where:"School",id:uuidv4()})}
-                        DeleteEducation={Functions.deleteSkill}    
-                        editEducationStart={Functions.editSkill}
-                        editEducationEnd={Functions.editSkill} 
-                        editEducationWhere={Functions.editSkill}
-                        editEducationDirection={Functions.editSkill} 
-                        />
+                    <div className="InputBorder">
+                        <p>EXPIRIENCE</p>
+                    </div>
+                    <div className="expirienceoneOutput InputBorder">
+                            <Expirience
+                            array={expirience}
+                            arrayHandler={handleExpirience}
+                            AddExpirience={()=>Functions.AddSkill(handleExpirience,expirience,{startdate:"2023-09-01",enddate:"2023-07-01",where:"Place",resposibilities:['responsiblity1','responsiblity2'],id:uuidv4()})}
+                            AddResponsibilty={ResponsibilityFunctions.AddResponsibilty}
+                            deleteExpirience={Functions.deleteSkill}
+                            DeleteResponsibilty={ResponsibilityFunctions.DeleteResponsibilty}
+                            editExpirienceWhere={Functions.editSkill}
+                            editExpirienceStart={Functions.editSkill}
+                            editExpirienceEnd={Functions.editSkill}
+                            editResponsiblity={ResponsibilityFunctions.editResponsiblity}
+                            editExpirienceJobPostion={Functions.editSkill}/>
+                    </div>
+                </div>
+
+                <div>
+                    <div className="InputBorder">
+                        <p>EDUCATION</p>
+                    </div>
+                    <div className="InputBorder">
+                            <Education
+                            array={education}
+                            arrayHandler={handleEducation}
+                            AddEducation={()=>Functions.AddSkill(handleEducation,education,{startdate:"2015-09-01",enddate:"2020-07-01",direction:"IT",where:"School",id:uuidv4()})}
+                            DeleteEducation={Functions.deleteSkill}
+                            editEducationStart={Functions.editSkill}
+                            editEducationEnd={Functions.editSkill}
+                            editEducationWhere={Functions.editSkill}
+                            editEducationDirection={Functions.editSkill}
+                            />
+                    </div>
                 </div>
 
                 

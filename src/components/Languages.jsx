@@ -1,8 +1,8 @@
 export default function Languages({array,arrayHandler,handleLanguage,handleLanguageLevel,handleAddLanguage,handleDeleteLanguage}){
     return(
-        <div>
+        <div className="LanguagesDiv">
             {array.map((lang,index)=>(
-                <div key={lang.id}>
+                <div key={lang.id} className="Language">
                     <input type="text" value={lang.language} onChange={(e)=>handleLanguage(array,arrayHandler,e.target.value,index,"language")}/>
                     <select onChange={(e)=>handleLanguageLevel(array,arrayHandler,e.target.value,index,"level")}>
                         <option value="A1">A1</option>
@@ -14,10 +14,10 @@ export default function Languages({array,arrayHandler,handleLanguage,handleLangu
                         <option value="C1">C1</option>
                         <option value="C2">C2</option>
                     </select>
-                    <button onClick={()=>handleDeleteLanguage(array,arrayHandler,index)}>Delete</button>
+                    <button onClick={()=>handleDeleteLanguage(array,arrayHandler,index)} >Delete</button>
                 </div>
             ))}
-            <button onClick={handleAddLanguage}>Add Language</button>
+            <button onClick={handleAddLanguage} className="Language">Add Language</button>
         </div>
     )
 }

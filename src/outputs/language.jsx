@@ -54,7 +54,7 @@ function ExpirienceOutput({array}){
                 </div>                    
                 
                 <div className="responsibilites">
-                    <p className="responsibities">Responsibilites</p>
+                    <p className="responsibities">Accomplishments</p>
                     <ul>{exp.resposibilities.map((responsibilty,index)=>(
                         <li key={index} className="responsibility">{responsibilty}</li>
                     ))}</ul>
